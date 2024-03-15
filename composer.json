@@ -1,0 +1,21 @@
+{
+  "name": "jirik1h/zaslat-auth-bundle",
+  "type": "symfony-bundle",
+  "version": "1.0.1",
+  "require": {
+    "php": ">=8.1",
+    "symfony/validator": ">=6.2",
+    "symfony/http-kernel": ">=6.2"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "jirik1h\\ZaslatAuthBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "jirik1h\\ZaslatAuthBundle\\Tests\\": "tests/"
+    }
+  }
+}
