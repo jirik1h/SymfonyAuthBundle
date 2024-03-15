@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Security;
+namespace jirik1h\ZaslatAuthBundle\Security;
 
 use jirik1h\ZaslatAuthBundle\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\JsonResponse;
