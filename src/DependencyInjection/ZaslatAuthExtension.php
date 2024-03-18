@@ -15,6 +15,6 @@ final class ZaslatAuthExtension extends Extension
     {
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yaml');
-        $loader->load('security.yaml');
+        $loader->load('packages/security.yaml');
     }
 }
