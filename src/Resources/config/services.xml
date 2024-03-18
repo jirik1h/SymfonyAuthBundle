@@ -5,6 +5,6 @@
         http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
         <defaults autowire="true" autoconfigure="true"/>
-        <prototype namespace="jirik1h\ZaslatAuthBundle\" resource="../../../src/" exclude="../src/{DependencyInjection,Kernel.php}"/>
+        <prototype namespace="jirik1h\ZaslatAuthBundle\" resource="../../../src/" exclude="../src/{DependencyInjection,Entity,Kernel.php}"/>
     </services>
 </container>
