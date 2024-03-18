@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace jirik1h\ZaslatAuthBundle\Security;
 
-use jirik1h\ZaslatAuthBundle\Entity\User;
 use jirik1h\ZaslatAuthBundle\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\Exception\CustomUserMessageAuthenticationException;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Http\Authenticator\AbstractAuthenticator;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
@@ -45,7 +45,7 @@ final class ApiAuthenticator extends AbstractAuthenticator
             throw new CustomUserMessageAuthenticationException('API token is not valid.');
         }
 
-        return new SelfValidatingPassport(new UserBadge($user->getEmail() ?? '', static function () use ($user): User {
+        return new SelfValidatingPassport(new UserBadge($user->getEmail() ?? '', static function () use ($user): UserInterface {
             return $user;
         }));
     }

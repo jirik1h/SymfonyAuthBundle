@@ -12,7 +12,7 @@ use function array_unique;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Index(name: 'user_email_idx', columns: ['email'])]
-class User
+class User implements UserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
